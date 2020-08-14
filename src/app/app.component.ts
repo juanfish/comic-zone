@@ -11,19 +11,24 @@ export class AppComponent {
   title = 'comic-zone';
   ffheroe : string = '';
   nobmre : string = '';
-  comicx :{};
+  comicx = [
+    'superman',
+    'batman',
+    'acuaman'
+  ];
 
 
   constructor (private http : HttpClient){
-    let resultado = this.http.get(environment.url);
+    // let resultado = this.http.get(environment.url);
     
-    resultado.subscribe(resultado => {
-      console.log("Respuesta json", resultado);
-      this.comicx = <RootObject>resultado;
-    })
+    // resultado.subscribe(resultado => {
+    //   console.log("Respuesta json", resultado);
+    //   this.comicx = <RootObject>resultado;
+    // })
   }
 
   onClick(){
     this.nobmre = this.ffheroe;
+    console.log(this.comicx)
   }
 }
